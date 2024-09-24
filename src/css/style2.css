@@ -1,0 +1,30 @@
+
+body{
+    padding: 50px;
+}
+
+.h1 .welcome{
+    text-align: center;
+    padding-top: 100px;
+}
+
+.cont{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: rgb(255, 254, 239);
+    color: rgb(221, 150, 207);
+}
+
+.fg{
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    font-size: 15px;
+    background-color:  rgb(221, 150, 207);
+    border-width: 3px;
+    border-color: bisque;
+    color: rgb(255, 255, 255);
+}

@@ -10,31 +10,29 @@ class Database
 
     public function __construct()
     {
-        if($_SERVER['SERVER_NAME'] === 'localhost'|| $SERVER['SERVER_ADDR'] === '127.0.0.1' ||  $SERVER['SERVER_ADDR'] === '192.168.1.72'){
+        if ($_SERVER['SERVER_NAME'] === 'localhost' || $_SERVER['SERVER_ADDR'] === '127.0.0.1' || $_SERVER['SERVER_ADDR'] === '192.168.1.72') {
             $this->host = "localhost";
-            $this->db_name ="itelec2";
+            $this->db_name = "itelec2";
             $this->username = "root";
-            $this->password = ""; 
-        }
-        else{
+            $this->password = "";
+        } else {
             $this->host = "";
-            $this->db_name ="";
+            $this->db_name = "";
             $this->username = "";
-            $this->password = ""; 
+            $this->password = "";
         }
     }
 
     public function dbConnection()
     {
         $this->conn = null;
-        try{
+        try {
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-        } catch(PDOException $exception)
-        {
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $exception) {
             echo "Connection error:" . $exception->getMessage();
         }
-
+        
         return $this->conn;
     }
 }
